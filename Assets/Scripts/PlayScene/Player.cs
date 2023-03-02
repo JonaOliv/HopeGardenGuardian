@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Player y = " + this.transform.position.y + ", x = " + this.transform.position.x);
+
         if (Input.GetKey(KeyCode.LeftArrow)) 
         {
             _currentSpeed = Mathf.Min(_currentSpeed + movementSpeed * Time.deltaTime, MAX_SPEED);
