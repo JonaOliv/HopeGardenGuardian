@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     private SpriteRenderer _renderer;
     private bool _rightFlip;
 
+    private float _fRightFlipping;
+    public float fRightFlipping => _fRightFlipping;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,10 @@ public class Player : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
 
         _currentSpeed = 0;
+
+        _fRightFlipping = 1.0f;
+
+
     }
 
     // Update is called once per frame
@@ -42,6 +49,8 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2 (-_currentSpeed, rb.velocity.y);
             playerAnimation.moveWithSpeed(_currentSpeed);
             _renderer.flipX = true;
+
+            _fRightFlipping = -(1.0f);
         }
 
         if (Input.GetKeyUp(KeyCode.LeftArrow))
@@ -56,6 +65,8 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(_currentSpeed, rb.velocity.y);
             playerAnimation.moveWithSpeed(_currentSpeed);
             _renderer.flipX = false;
+
+            _fRightFlipping = 1.0f;
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {

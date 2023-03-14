@@ -457,7 +457,7 @@ MonoBehaviour:
   xMax: 100
   yMin: 0
   yMax: 100
-  xOffset: 4
+  xOffset: 10
   yOffset: 0
   followSpeed: 1
   isXLocked: 0
