@@ -43,12 +43,12 @@ public class CameraHandler : MonoBehaviour
         Debug.Log("Camera y = " + y + ", x = " + x);
 
 
-        if (transform.position.x < player.transform.position.x + X_DIFFERENCE && transform.position.x > player.transform.position.x - X_DIFFERENCE)
+        if (transform.position.x < x + X_DIFFERENCE && transform.position.x > x - X_DIFFERENCE)
             x = transform.position.x;
         else
             x = Mathf.Lerp(transform.position.x, x, Time.deltaTime * followSpeed);
 
-        if (transform.position.y < player.transform.position.y + Y_DIFFERENCE && transform.position.y > player.transform.position.y - Y_DIFFERENCE)
+        if (transform.position.y < y + Y_DIFFERENCE && transform.position.y > y - Y_DIFFERENCE)
             y = transform.position.y;
         else
             y = Mathf.Lerp(transform.position.y, y, Time.deltaTime * followSpeed);
