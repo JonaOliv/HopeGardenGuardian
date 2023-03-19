@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player y = " + this.transform.position.y + ", x = " + this.transform.position.x);
+        //Debug.Log("Player y = " + this.transform.position.y + ", x = " + this.transform.position.x);
 
         if (Input.GetKey(KeyCode.LeftArrow)) 
         {

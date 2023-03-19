@@ -40,9 +40,6 @@ public class CameraHandler : MonoBehaviour
         float x = Mathf.Clamp(player.transform.position.x + xOffset * fRightFlipping, xMin, xMax);
         float y = Mathf.Clamp(player.transform.position.y + yOffset, yMin, yMax);
 
-        Debug.Log("Camera y = " + y + ", x = " + x);
-
-
         if (transform.position.x < x + X_DIFFERENCE && transform.position.x > x - X_DIFFERENCE)
             x = transform.position.x;
         else

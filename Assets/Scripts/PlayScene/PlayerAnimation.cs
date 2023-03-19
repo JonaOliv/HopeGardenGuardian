@@ -23,7 +23,7 @@ public class PlayerAnimation : MonoBehaviour
         if (animator != null)
         {
             //movement = Mathf.Abs(movement);
-            Debug.Log("Speed :"+ movement);
+            //Debug.Log("Speed :"+ movement);
             animator.SetFloat("SpeedX", movement);
             animator.SetBool("OnMovement", true);
         }
