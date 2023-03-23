@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420034}
   - component: {fileID: 519420033}
   m_Layer: 8
   m_Name: Main Camera
@@ -626,12 +627,22 @@ MonoBehaviour:
   yMin: 0
   yMax: 100
   xOffset: 4
-  yOffset: 0
+  yOffset: 2
   followSpeed: 1
-  isXLocked: 0
-  isYLocked: 0
-  X_DIFFERENCE: 15
-  Y_DIFFERENCE: 15
+  worldBuilder: {fileID: 469126032}
+  cam: {fileID: 519420028}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7221f71bd9cc14740a68fea1f532cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &574427412
 GameObject:
   m_ObjectHideFlags: 0

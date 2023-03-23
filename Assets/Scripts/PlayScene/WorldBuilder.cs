@@ -11,6 +11,8 @@ public class WorldBuilder : MonoBehaviour
     public GameObject landStatus;
 
     GameObject temp;
+    private int worldWidth;
+    private int worldHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,9 @@ public class WorldBuilder : MonoBehaviour
     }
 
     void GenerateLevel(){
+        worldWidth = worldLevel.width;
+        worldHeight = worldLevel.height;
+
         for (int x = 0; x < worldLevel.width; x++){
             for (int y = 0; y < worldLevel.height; y++){
                 GenerateTile(x,y);
@@ -36,15 +41,6 @@ public class WorldBuilder : MonoBehaviour
         }
 
         foreach(ColorToScript pixel in colorToScriptMap){
-            
-
-            // if (pixelColor.r != 0){
-            //     Debug.Log("RGB");
-            // Debug.Log(pixelColor);
-            // Debug.Log(pixel.color);
-            //     Debug.Log("Hello world"); 
-            // }
-
             if(pixel.color.Equals(pixelColor)){
                 Vector3 position = new Vector3(x,y,pixel.z);
 
@@ -62,4 +58,7 @@ public class WorldBuilder : MonoBehaviour
             }
         }
     }
+
+    public int getWorldWidth() { return worldWidth; }
+    public int getWorldHeight() { return worldHeight; }
 }

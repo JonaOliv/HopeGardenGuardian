@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public const int MAX_SPEED = 3;
     public const float movementSpeed = 1.5f;
     private float _currentSpeed;
-    public const int atleticsJump = 5;
+    public const float atleticsJump = 6.5f;
 
     //Animation Section
     public PlayerAnimation playerAnimation;
