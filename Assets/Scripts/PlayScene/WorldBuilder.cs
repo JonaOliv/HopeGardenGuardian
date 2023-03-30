@@ -17,7 +17,16 @@ public class WorldBuilder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GenerateLevel();
+        try
+        {
+            GenerateLevel();
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log("error: " + e.Message);
+        }
+        
+
         Debug.Log("Calling builder");
     }
 
