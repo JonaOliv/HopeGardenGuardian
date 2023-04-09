@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     private float _fRightFlipping;
     public float fRightFlipping => _fRightFlipping;
 
+    Vector3 circleOffset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class Player : MonoBehaviour
         _currentSpeed = 0;
 
         _fRightFlipping = 1.0f;
+
+        circleOffset = new Vector3(0, -0.3f, 0);
 
 
     }
@@ -83,6 +87,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isOnPlatform = Physics2D.OverlapCircle(onLandStatus.position,landCheckRadio,landType);
+        isOnPlatform = Physics2D.OverlapCircle(onLandStatus.position + circleOffset, landCheckRadio,landType);
     }
 }
