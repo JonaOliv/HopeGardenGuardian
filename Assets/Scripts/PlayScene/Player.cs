@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public const int MAX_SPEED = 3;
     public const float movementSpeed = 1.5f;
     private float _currentSpeed;
-    public const float atleticsJump = 6.5f;
+    public const float atleticsJump = 8f;
 
     //Animation Section
     public PlayerAnimation playerAnimation;
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
         circleOffset = new Vector3(0, -0.3f, 0);
 
-
+        
     }
 
     // Update is called once per frame
@@ -80,9 +80,23 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            if(isOnPlatform)  
+            if (isOnPlatform)
+            {
                 rb.velocity = new Vector2(rb.velocity.x, atleticsJump);
+                rb.drag = 8f;
+            }
+            else {
+                rb.drag = 0f;
+            } 
+                
         }
+
+        if (isOnPlatform)
+        {
+            rb.drag = 8f;
+            Debug.Log("friction :" + 0 + " rb.attachedColliderCount " + rb.attachedColliderCount);
+        }
+        
     }
 
     private void FixedUpdate()
