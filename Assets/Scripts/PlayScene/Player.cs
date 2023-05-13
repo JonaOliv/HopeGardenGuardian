@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public const int MAX_SPEED = 3;
     public const float movementSpeed = 1.5f;
     private float _currentSpeed;
-    public const float atleticsJump = 8f;
+    public const float atleticsJump = 10f;
 
     //Animation Section
     public PlayerAnimation playerAnimation;
@@ -96,7 +96,11 @@ public class Player : MonoBehaviour
             rb.drag = 8f;
             Debug.Log("friction :" + 0 + " rb.attachedColliderCount " + rb.attachedColliderCount);
         }
-        
+        else
+        {
+            rb.drag = 0f;
+        }
+
     }
 
     private void FixedUpdate()
