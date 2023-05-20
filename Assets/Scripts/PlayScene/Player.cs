@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     Vector3 circleOffset;
 
+    private Vector3 _playerRespawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
 
         circleOffset = new Vector3(0, -0.3f, 0);
 
-        
+        _playerRespawnPoint = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
 
     // Update is called once per frame
@@ -106,5 +108,10 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         isOnPlatform = Physics2D.OverlapCircle(onLandStatus.position + circleOffset, landCheckRadio,landType);
+    }
+
+    public Vector3 getPlayerRespawnPoint()
+    {
+        return _playerRespawnPoint;
     }
 }

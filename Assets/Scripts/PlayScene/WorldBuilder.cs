@@ -13,6 +13,7 @@ public class WorldBuilder : MonoBehaviour
     GameObject temp;
     private int worldWidth;
     private int worldHeight;
+    private Vector3 _playerRespawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,7 @@ public class WorldBuilder : MonoBehaviour
                 {
                     // -(y * 0.07f)
                     Vector3 position2 = new Vector3(x, y, pixel.z);
+                    _playerRespawnPoint = new Vector3(x, y, pixel.z);
                     Instantiate(landStatus, position2, Quaternion.identity, temp.transform);
                 }
             }
@@ -70,4 +72,9 @@ public class WorldBuilder : MonoBehaviour
 
     public int getWorldWidth() { return worldWidth; }
     public int getWorldHeight() { return worldHeight; }
+
+    public Vector3 getPlayerRespawnPoint()
+    {
+        return _playerRespawnPoint;
+    }
 }
