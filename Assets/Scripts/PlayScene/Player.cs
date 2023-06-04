@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
 
     private Vector3 _playerRespawnPoint;
 
+    public int souls;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,8 @@ public class Player : MonoBehaviour
         circleOffset = new Vector3(0, -0.3f, 0);
 
         _playerRespawnPoint = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+
+        souls = 0;
     }
 
     // Update is called once per frame
